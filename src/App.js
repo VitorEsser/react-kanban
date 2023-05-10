@@ -16,7 +16,7 @@ export default function App() {
     const newTask = {
       id: generateId(),
       title,
-      state
+      state,
     };
     setTasks((existingTasks) => {
       return [...existingTasks, newTask];
@@ -58,7 +58,7 @@ export default function App() {
           taskState="Fazendo"
           onAddTask={addTask}
           tasks={tasks.filter((t) => t.state === "Fazendo")}
-          onTaskUpdate={updateTask}
+          onUpdateTask={updateTask}
           onDeleteTask={deleteTask}
         />
         <TaskList
@@ -66,7 +66,7 @@ export default function App() {
           taskState="Completa"
           onAddTask={addTask}
           tasks={tasks.filter((t) => t.state === "Completa")}
-          onTaskUpdate={updateTask}
+          onUpdateTask={updateTask}
           onDeleteTask={deleteTask}
         />
       </div>
